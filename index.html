@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I'm Sorry ❤️</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: 'Segoe UI', sans-serif;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+    }
+
+    .container {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 3em;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+        font-size: 1.3em;
+        margin: 20px auto;
+        max-width: 500px;
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    .heart {
+        font-size: 50px;
+        animation: heartbeat 1s infinite;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1em;
+        border: none;
+        border-radius: 25px;
+        background-color: white;
+        color: #ff6b81;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 20px;
+    }
+
+    button:hover {
+        background-color: #ff6b81;
+        color: white;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heartbeat {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    .floating-hearts span {
+        position: absolute;
+        color: white;
+        font-size: 20px;
+        animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(100vh);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-10vh);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="heart">❤️</div>
+    <h1>I'm Really Sorry</h1>
+    <p>
+        I know I made a mistake... and being far from you makes it even harder.  
+        But please know, my love for you has never changed.  
+        You mean everything to me, and I truly regret hurting you. 💔
+    </p>
+
+    <p>
+        Distance may keep us apart physically,  
+        but my heart is always with you.  
+        Please forgive me... ❤️
+    </p>
+
+    <button onclick="showMessage()">Click if you still love me 🥺</button>
+</div>
+
+<div class="floating-hearts"></div>
+
+<script>
+function showMessage() {
+    alert("I promise to do better. I love you so much ❤️");
+}
+
+// Create floating hearts
+const container = document.querySelector('.floating-hearts');
+
+setInterval(() => {
+    const heart = document.createElement('span');
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
+    container.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 300);
+</script>
+
+</body>
+</html>
